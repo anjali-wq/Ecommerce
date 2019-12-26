@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Car Details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/slide2.css" media="screen"/>
+  <script src="../js/slide2.js"></script>
+</head>
+<style>
+</style>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top printhide">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Runways</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fav.html">Favourites</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row" style="margin-top:85px">
+      <!--main image with thumnail starts here -->
+      <div class="col-12 col-md-6">
+        <div class="row main w-100">
+          <div class="col-12 w-100 px-0">
+            <img class="maxi w-100 px-0" src="https://i.pinimg.com/originals/04/bc/d4/04bcd4d65e45a347d4d5881ee120f6f5.jpg" />
+          </div>
+          <div class="col-12 mini">
+            <div class="row">
+              <div class="col-3 px-0">
+                <img class="w-100" src="https://i.pinimg.com/originals/04/bc/d4/04bcd4d65e45a347d4d5881ee120f6f5.jpg">
+              </div>
+              <div class="col-3 px-0">
+                <img class="w-100" src="https://cdn.pixabay.com/photo/2015/08/11/12/05/audi-a5-884243_960_720.jpg">
+              </div>
+              <div class="col-3 px-0">
+                <img class="w-100" src="https://1.bp.blogspot.com/-Lpkg9y-4z1c/VssDWwO0qxI/AAAAAAAAADU/unPGuCEUD9s/s1600/.jpg">
+              </div>
+              <div class="col-3 px-0">
+                <img class="w-100" src="https://icdn6.digitaltrends.com/image/2019-bmw-x5-22-1600x1067.jpg">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!--main image ends here-->
+
+      <div class="col-12 col-md-6" style="margin-top:50px;">
+        <h1 id="title"> Mercedes C</h1>
+        <h3 id="title-price">2483 </h3>
+        <div class="car-info margin-bottom-50">
+          <!--table of specifications start here-->
+          <div class="table-responsive">
+            <table class="table table-details mt-4">
+              <tbody>
+                <tr>
+                  <th>Make:</th>
+                  <td id="make">Mercedes-Benz</td>
+                </tr>
+                <tr>
+                  <th>Model:</th>
+                  <td id="model">S 600</td>
+                </tr>
+                <tr>
+                  <th>Year:</th>
+                  <td id="year">2007</td>
+                </tr>
+                <tr>
+                  <th>Price:</th>
+                  <td id="price">€29,950</td>
+                </tr>
+                <tr>
+                  <th>Mileage:</th>
+                  <td id="mileage">90,722 miles <br>145,999 km</td>
+                </tr>
+                <tr>
+                  <th>Fuel type:</th>
+                  <td id="fuel_type">Petrol</td>
+                </tr>
+                <tr>
+                  <th>Engine size:</th>
+                  <td id="engine_size">5.5</td>
+                </tr>
+                <tr>
+                  <th>Colour</th>
+                  <td id="color">CORNELIAN RED</td>
+                </tr>
+                <tr>
+                  <th>Body:</th>
+                  <td id="body">Saloon</td>
+                </tr>
+              </tbody>
+            </table>
+          </div><!-- table end here-->
+        </div>
+        <div class="row">
+          <div class="col-12 mb-2 mb-md-0">
+            <button type="button" onclick="window.location.href = 'contact.html';" class="btn btn-info btn-lg printhide">Contact Dealer</button>
+          </div>
+          <div class="col-12 col-md-6 my-md-3 mb-2">
+            <button type="button" class="w-100 btn btn-secondary font-13 printhide" onclick="favfunc('model')">Add to favourites</button>
+          </div>
+          <div class="col-12 col-md-6 my-md-3 pl-md-0 mb-2">
+            <button type="button" class="w-100 btn btn-secondary font-13 printhide" onclick="deleteItem()">Remove from favourites</button>
+          </div>
+        </div>
+      </div>
+      <!--jquery toggle-->
+      <div class="col-12 mt-4 printhide">
+        <hr>
+        <button class="button btn-lg"><a>Hide Description</a></button>
+        <h6 class="mt-2">BEAUTIFUL CAR FINISHED METALLIC WITH COMPLIMENTING BLACK PEARL/CARBON CHECK INTERIOR. FULL EXTERIOR DE-CHROME. 17" MINI COSMOS WHEELS FINISHED IN BLACK. SPORTS SEATS. MULTI FUNCTION SPORTS STEERING WHEEL. PIANO BLACK INTERIOR TRIM. MINI EXCITEMENT PACK. MINI DRIVING MODES. FOGLIGHTS. CLIMATE CONTROL. CRUISE CONTROL. LIGHTS PACK. AMBIENT LIGHTING. DAB RADIO. ALL CARS COME FULLY SERVICED WARRANTED AND CARTELL CHECKED. TRADES INS WELCOMED. A HOST OF FINANCE OPTIONS TO SUIT YOUR NEEDS.
+          MINI EXCITEMENT PACK. MINI DRIVING MODES. FOGLIGHTS. CLIMATE CONTROL. CRUISE CONTROL. LIGHTS PACK. AMBIENT LIGHTING. DAB RADIO. ALL CARS COME FULLY SERVICED WARRANTED AND CARTELL CHECKED. TRADES INS WELCOMED. A HOST OF FINANCE OPTIONS TO SUIT YOUR NEEDS. MINI EXCITEMENT PACK. MINI DRIVING MODES. 
+        </h6>
+      </div><!--ends here-->
+    </div>
+  </div>
+  <footer class="mt-4 bg-dark">
+    <div class="container">
+      <div class="row text-center align-items-center">
+        <div class="col-12 col-sm-6 col-md-4 text-sm-left" style="color:white">
+          <h3>Runways</h3>
+          <p>70 Bowman St.<br>South Circular Rd, Dublin 8</p>
+          <p>Ireland</p>
+          <p>+353 896523147</p>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0 text-center text-sm-right text-md-center" style="height:80px;">
+        </div>
+        <!-- Social media links-->
+        <div class="col-12 col-md-4 mt-4 mt-md-0 text-center text-md-right">
+          <a href="https://www.facebook.com" class="mx-2"><img src="https://img.icons8.com/ios-glyphs/50/ffffff/facebook-new.png"></a>
+          <a href="https://www.linkedin.com" class="mx-2"><img src="https://img.icons8.com/ios-glyphs/50/ffffff/linkedin-2.png"></a>
+          <a href="https://www.instagram.com" class="mx-2"><img src="https://img.icons8.com/ios-glyphs/50/ffffff/instagram-new.png"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
