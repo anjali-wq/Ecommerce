@@ -17,6 +17,23 @@ CREATE TABLE post (
   FOREIGN KEY (author_id) REFERENCES user (id)
 );
 
+
+CREATE TABLE products(
+	productId INTEGER PRIMARY KEY,
+	name TEXT,
+	price REAL,
+	description TEXT,
+	image TEXT,
+	stock INT
+)
+
+CREATE TABLE Cart(
+	userId INTEGER,
+	productId INTEGER,
+	FOREIGN KEY(userId) REFERENCES users(userId),
+	FOREIGN KEY(productId) REFERENCES products(productId)
+)
+
 -- example data
 
 -- real data below'
