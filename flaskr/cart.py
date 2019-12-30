@@ -14,7 +14,7 @@ def addToCart():
         return redirect(url_for('loginForm'))
     else:
         productId = int(request.args.get('productId'))
-        with sqlite3.connect('schema.sql') as conn:
+        with sqlite3.connect('database.db') as conn:
             cur = conn.cursor()
             cur.execute("SELECT id FROM user WHERE username = '" + session['username'] + "'")
             userId = cur.fetchone()[0]
