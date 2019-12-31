@@ -21,22 +21,22 @@ CREATE TABLE post (
 
 -- real data below'
 
-INSERT INTO BILLING  (InvoiceID,InvoiceDate,InvoiceTotal,PaymentType,EmployeeID,OrderDetailID,DiscountID)
-values ('INV001','2018-01-25',500,'CASH','EMP003','OD001','DIS01')
+INSERT INTO BILLING (InvoiceID,InvoiceDate,InvoiceTotal,PaymentType,EmployeeID,OrderDetailID,DiscountID)
+values ('INV001','2018-01-25',500,'CASH','EMP003','OD001','DIS01');
 
 INSERT INTO BILLING  (InvoiceID,InvoiceDate,InvoiceTotal,PaymentType,EmployeeID,OrderDetailID,DiscountID)
-values ('INV002','2018-03-25',800.52,'CARD','EMP004','OD002','DIS02')
+values ('INV002','2018-03-25',800.52,'CARD','EMP004','OD002','DIS02');
 
 INSERT INTO BILLING  (InvoiceID,InvoiceDate,InvoiceTotal,PaymentType,EmployeeID,OrderDetailID,DiscountID)
-values ('INV003','2018-09-12',50.36,'CARD','EMP003','OD003',null)
+values ('INV003','2018-09-12',50.36,'CARD','EMP003','OD003',null);
 
 INSERT INTO BILLING  (InvoiceID,InvoiceDate,InvoiceTotal,PaymentType,EmployeeID,OrderDetailID,DiscountID)
-values ('INV004','2018-06-14',150.61,'CARD','EMP003','OD004','DIS01')
+values ('INV004','2018-06-14',150.61,'CARD','EMP003','OD004','DIS01');
 
 INSERT INTO BILLING  (InvoiceID,InvoiceDate,InvoiceTotal,PaymentType,EmployeeID,OrderDetailID,DiscountID)
-values ('INV005','2018-04-06',167,'CASH','EMP004','OD002','DIS02')
+values ('INV005','2018-04-06',167,'CASH','EMP004','OD002','DIS02');
 
-INSERT INTO ORDER_DETAILS (OrderDetailID,OrderID,ProductID,Quantity)
+INSERT INTO ORDER_DETAILS (OrderDetailID,OrderID,ProductID,Quantity);
 VALUES ('OD001',001,'PROD001',2)
 
 INSERT INTO ORDER_DETAILS (OrderDetailID,OrderID,ProductID,Quantity)

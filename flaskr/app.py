@@ -80,3 +80,5 @@ def init_db():
 	print('success')
 
 	conn.close()
+	if __name__ == '__main__':
+		app.run(debug=True)
