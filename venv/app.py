@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, request, flash, url_for
 from flask_mysqldb import MySQL
 app = Flask(__name__)
 
@@ -14,6 +14,38 @@ mysql = MySQL(app)
 def index():
 	print('index')
 	return render_template('index.html')
+
+@app.route("/kart/index")
+def kart_index():
+	return render_template('kart/index.html')
+
+@app.route("/kart/index")
+def kart_create():
+	return render_template('kart/create.html')
+
+@app.route('/create', methods=('GET', 'POST'))
+def create():
+    if request.method == 'POST':
+        title = request.form['title']
+        body = request.form['body']
+        error = None
+
+        if not title:
+            error = 'Title is required.'
+
+        if error is not None:
+            flash(error)
+        else:
+            db = get_db()
+            db.execute(
+                'INSERT INTO kart (title, body, author_id)'
+                ' VALUES (?, ?, ?)',
+                (title, body, g.user['id'])
+            )
+            db.commit()
+            return redirect(url_for('kart.index'))
+
+    return render_template('kart/create.html')
 
 @app.route("/contact")
 def contact():
