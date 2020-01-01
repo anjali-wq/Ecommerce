@@ -1,12 +1,14 @@
-DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS post;
+DROP TABLE IF EXISTS kart;
+DROP TABLE IF EXISTS products;
 
--- example data
-CREATE TABLE user (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  username TEXT UNIQUE NOT NULL,
-  password TEXT NOT NULL
-);
+CREATE TABLE users(
+user_id INTEGER PRIMARY KEY AUTOINCREMENT,
+		password TEXT,
+		email TEXT UNIQUE NOT NULL,
+		username TEXT UNIQUE NOT NULL
+		);
 
 CREATE TABLE post (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -17,20 +19,28 @@ CREATE TABLE post (
   FOREIGN KEY (author_id) REFERENCES user (id)
 );
 
+CREATE TABLE kart
+		(user_id INTEGER,
+		product_id INTEGER,
+		FOREIGN KEY(user_id) REFERENCES user(user_id),
+		FOREIGN KEY(product_id) REFERENCES product(product_id)
+		);
 
-CREATE TABLE products(
-	productId INTEGER PRIMARY KEY,
-	name TEXT,
-	price REAL,
-	description TEXT,
-	image TEXT,
-	stock INT
-)
+CREATE TABLE products
+(id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL,
+name TEXT,
+price REAL,
+description TEXT,
+image TEXT,
+stock INTEGER
+);
 
-CREATE TABLE Cart(
-	userId INTEGER,
-	productId INTEGER,
-	FOREIGN KEY(userId) REFERENCES users(userId),
-	FOREIGN KEY(productId) REFERENCES products(productId)
-)
+INSERT INTO products (name, price, description, image, stock)
+VALUES ('volkswagon', 1000, 'car description', 'static/images/car.jpeg', 1);
+
+INSERT INTO products (name, price, description, image, stock)
+VALUES ('BMW', 2000, 'car description bmw', 'static/images/car.jpeg', 2);
+
+INSERT INTO products (name, price, description, image, stock)
+VALUES ('Volvo', 2000, 'car description volvo', 'static/images/car2.jpg', 44);
 
