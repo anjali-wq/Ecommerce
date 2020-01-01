@@ -43,3 +43,4 @@ VALUES ('BMW', 2000, 'car description bmw', 'static/images/car.jpeg', 2);
 
 INSERT INTO products (name, price, description, image, stock)
 VALUES ('Volvo', 2000, 'car description volvo', 'static/images/car2.jpg', 44);
+
