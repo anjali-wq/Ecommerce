@@ -32,4 +32,12 @@ def create_app(test_config=None):
     app.register_blueprint(blog.bp)
     app.add_url_rule('/', endpoint='index')
 
+    from . import kart
+    app.register_blueprint(kart.bp)
+    app.add_url_rule('/', endpoint='index')
+
+    from . import products
+    app.register_blueprint(products.bp)
+    app.add_url_rule('/', endpoint='index')
+
     return app
