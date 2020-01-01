@@ -17,12 +17,16 @@ def index():
         ).fetchall()
         return render_template('products/index.html', products=products)
     else:
-        print(request.form['product_id'])
+        # print(request.form['product_id'])
+        try:
+            logged_in_user_id = g.user['id']
+        except:
+            logged_in_user_id = 1
         db = get_db()
         db.execute(
             'INSERT INTO kart (user_id, product_id)'
             ' VALUES (?, ?)',
-            (g.user['id'], request.form['product_id'])
+            (logged_in_user_id, request.form['product_id'])
         )
         db.commit()
         return redirect(url_for('products.index'))
