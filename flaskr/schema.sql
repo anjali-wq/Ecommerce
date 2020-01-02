@@ -36,11 +36,12 @@ stock INTEGER
 );
 
 INSERT INTO products (name, price, description, image, stock)
-VALUES ('volkswagon', 1000, 'car description', 'static/images/car.jpeg', 1);
+VALUES ('Tshirt', 1000, 'T-Shirt', 'static/images/tshirt.jpg', 1);
 
 INSERT INTO products (name, price, description, image, stock)
-VALUES ('BMW', 2000, 'car description bmw', 'static/images/car.jpeg', 2);
+VALUES ('Pants', 2000, 'Pant', 'static/images/car.jpeg', 2);
 
 INSERT INTO products (name, price, description, image, stock)
-VALUES ('Volvo', 2000, 'car description volvo', 'static/images/car2.jpg', 44);
+VALUES ('Sweater', 500, 'Sweater', 'static/images/car2.jpg', 44);
 
+commit;
