@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Runway</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script src="../static/scripts.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/index.css" media="screen"/>
+</head>
+<!--navbar starts here-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+	<div class="container">
+		<a class="navbar-brand" href="/">Runways</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="/">Home
+						<span class="sr-only">(current)</span>
+					</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" href="fav">Signin</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/contact">Cart</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<!--navbar ends here -->
+<header>
+	<body>
+		<!--carousel indicators starts here-->
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner" role="listbox">
+				<div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1471174617910-3e9c04f58ff5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')">
+					<div class="carousel-caption d-none d-md-block">
+						<h3 class="display-4">Mercedes Benz</h3>
+						<p class="lead">Skid Control System</p>
+					</div>
+				</div>
+
+				<div class="carousel-item" style="background-image: url(https://images.caricos.com/a/audi/2019_audi_a6/images/2560x1440/2019_audi_a6_104_2560x1440.jpg)">
+					<div class="carousel-caption d-none d-md-block">
+						<h3 class="display-4">Audi</h3>
+						<p class="lead">Electronic Stability</p>
+					</div>
+				</div>
+				<div class="carousel-item" style="background-image: url(https://images.caricos.com/v/vw/2014_volkswagen_golf_r/images/1920x1080/2014_volkswagen_golf_r_18_1920x1080.jpg)">
+					<div class="carousel-caption d-none d-md-block">
+						<h3 class="display-4">Volkswagen</h3>
+						<p class="lead">Remoteless connectivity</p>
+					</div>
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</header>
+	<div class="navbar navbar-dark bg-dark>
+		<div class="container">
+			<div class="col-md-2">
+				<h2 class="text-center"><img src="https://img.icons8.com/ios-filled/50/000000/search.png">CARS</h2>
+			</div>
+			<div class="form-group col-md-2">     
+
+				<select id="make_id" type="submit" name="make_id" onchange="toggleMake(this);" class="form-control make_id">
+					<option value="Year" class="Year">Select Make</option>
+					<option id="benz1" value="Mercedes-Benz" style="display:''" class="Make_Benz">p1</option>
+					<option id="Volk1" value="VOLKSWAGEN" style="display:''" class="Make_VOLKSWAGEN">p2</option>
+					<option id="Audi1" value="Audi" style="display:''" class="Make_Audi">p3</option>
+					<option id="Toyo1" value="TOYOTA" style="display:''" class="Make_TOYOTA">p4</option>
+					<option id="Hyun1" value="HYUNDAI" style="display:''" class="Make_HYUNDAI">p5</option>
+
+				</select>
+			</div>
+
+			<div class="form-group col-md-2">
+				<select name="model_id" id="year_id" onchange="toggleModel(this)" class="form-control">
+					<option value="Any make" >Select Year</option>
+					<option id="Benz12018" value="2018_BenA" style="display:none" class="2018_BenA">1</option>
+					<option id="Volk12018" value="2018_Volk" style="display:none" class="2018_Volk">2</option>			
+					<option id="Toyo12018" value="2018_Supra" style="display:none" class="2018_Supra">3</option>
+					<option id="Hyun12018" value="2018_Accent" style="display:none" class="2018_Accent">4</option>
+					<option id="Benz12019" value="2019_BenCls" style="display:none" class="2019_BenCls">5</option>                  
+					<option id="Audi12019" value="2019_Audi" style="display:none" class="2019_Audi">6</option>                         
+					<option id="Toyo12019" value="2019_Coro" style="display:none" class="2019_Coro">7</option>                         
+					<option id="Hyun12019" value="2019_Elantra" style="display:none" class="2019_Elantra">8</option>                         </select>       
+
+					<input type="Hidden" value="" name="xModelID">
+				</div>
+				<div class="form-group col-md-2">
+					<select name="model_id" id="model_id" onchange="toggleProduct(this)" class="form-control">
+						<option value="">Select Model</option>
+						<option id="Class_A1" value="Class_A" style="display:none" class="Class_A">A</option>
+						<option id="CLS_Class1" value="CLS_Class" style="display:none" class="CLS_Class">B</option>
+						<option id="A51" value="A5" style="display:none" class="A5">C</option>
+						<option id="A61" value="A6" style="display:none" class="A6">D</option>
+						<option id="Polo1" value="Polo" style="display:none" class="Polo">E</option>
+						<option id="Golf1" value="Golf" style="display:none" class="Golf">F</option>
+						<option id="Supra1" value="Supra" style="display:none" class="Supra">G</option>
+						<option id="Corolla1" value="Corolla" style="display:none" class="Corolla">H</option>
+						<option id="Accent1" value="Accent" style="display:none" class="Accent">I</option>
+						<option id="Elantra1" value="Elantra" style="display:none" class="Elantra">J</option>
+					</select>
+					<input type="Hidden" value="" name="xModelID">
+				</div>	  
+
+				<div class="form-group col-sm-2">
+
+					<button class="btn btn-primary" style="width:100%; background-color:orange"  onclick="resetFilter()" >Reset Filter</button>
+				</div>
+			</div>
+			<div class="container mt-4">
+				<!--images in grid-->
+				<div class="card text-center pb-2 mb-4">
+					<div class="row">
+						<div id="Mercedes-Benz"  class="col-lg-3 col-md-4 col-xs-6 thumb w3-content w3-section Mercedes-Benz Class_A">
+							<a class="thumbnail"  data-title="Honda city"
+							data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+							data-target="#image-gallery">
+							<img class="img-thumbnail w3-animate-zoom"
+							src="https://apollo-ireland.akamaized.net/v1/files/eyJmbiI6InRpMXBhOWQxb3E3eTItU1REVlRMUFQiLCJ3IjpbeyJmbiI6IjZtZ2p3bHA3a2dkYjItU1REVlRMUFQiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.yp8I5Gm-36Ciyt4HGx8iHdY79JsKJxlwlBolWu_--d0/image;s=1080x720;cars_;/121929887_;slot=1;filename=eyJmbiI6InRpMXBhOWQxb3E3eTItU1REVlRMUFQiLCJ3IjpbeyJmbiI6IjZtZ2p3bHA3a2dkYjItU1REVlRMUFQiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.yp8I5Gm-36Ciyt4HGx8iHdY79JsKJxlwlBolWu+--d0_rev001.jpg"
+							alt="Another alt text">
+						</a>
+
+						<p id="car_make1" class="font-weight-bold"> </p>	
+						<p id="car_model1" class="font-weight-bold"> </p>	
+						<p><a class="thumbnail btn btn-info" href="slide2.html" 
+							data-image="https://image.shutterstock.com/image-photo/image-front-sports-car-scene-260nw-566330083.jpg"
+							data-target="#image-gallery" class="btn btn-info" onclick="carfunction('car_model1')">Add to Cart </a></p>
+						</div>
+
+						<div id="Mercedes-Benz" style="display:''" class="col-lg-3 col-md-4 col-xs-6 thumb w3-content w3-section Mercedes-Benz CLS_Class">
+							<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Honda city"
+							data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+							data-target="#image-gallery">
+							<img class="img-thumbnail w3-animate-zoom"
+							src="https://upload.wikimedia.org/wikipedia/commons/2/23/Mercedes-Benz_CLS_350d_IMG_0901.jpg"
+							alt="Another alt text">
+						</a>
+
+						<p id="car_make2" class="font-weight-bold"> </p>	
+						<p id="car_model2" class="font-weight-bold"> </p>	
+
+						<p><a class="thumbnail btn btn-info" href="slide2.html" 
+							data-image="https://image.shutterstock.com/image-photo/image-front-sports-car-scene-260nw-566330083.jpg"
+							data-target="#image-gallery" class="btn btn-info" onclick="carfunction('car_model2')">Add to Cart</a></p>
+						</div>
+						<div id="Audi" style="display:''" class="col-lg-3 col-md-4 col-xs-6 thumb w3-content w3-section Audi A5">
+							<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Honda city"
+							data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+							data-target="#image-gallery">
+							<img class="img-thumbnail w3-animate-zoom"
+							src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Audi_A5_3.0_TDI_Quattro_Sportback_2967cc_diesel_registered_April_2017.jpg/1280px-Audi_A5_3.0_TDI_Quattro_Sportback_2967cc_diesel_registered_April_2017.jpg"
+							alt="Another alt text">
+						</a>
+						<p id="car_make3" class="font-weight-bold"> </p>	
+						<p id="car_model3" class="font-weight-bold"> </p>	
+
+						<p><a class="thumbnail btn btn-info" href="slide2.html" 
+							data-image="https://image.shutterstock.com/image-photo/image-front-sports-car-scene-260nw-566330083.jpg"
+							data-target="#image-gallery" class="btn btn-info" onclick="carfunction('car_model3')">Add to Cart</a></p>
+						</div>
+						<div id="Audi" style="display:''" class="col-lg-3 col-md-4 col-xs-6 thumb w3-content w3-section Audi A6">
+							<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Honda city"
+							data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+							data-target="#image-gallery">
+							<img class="img-thumbnail w3-animate-zoom"
+							src="https://upload.wikimedia.org/wikipedia/commons/6/61/Audi_A6_2018_%2844686505662%29.jpg"
+							alt="Another alt text">
+						</a>
+						<p id="car_make4" class="font-weight-bold"> </p>	
+						<p id="car_model4" class="font-weight-bold"> </p>	
+
+					</script>
+					<p><a class="thumbnail btn btn-info" href="slide2.html" 
+						data-image="https://image.shutterstock.com/image-photo/image-front-sports-car-scene-260nw-566330083.jpg"
+						data-target="#image-gallery" class="btn btn-info" onclick="carfunction('car_model4')">Add to Cart</a></p>
+					</div>
+					<div id="VOLKSWAGEN" style="display:''" class="col-lg-3 col-md-4 col-xs-6 thumb w3-content w3-section VOLKSWAGEN Golf">
+						<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Honda city"
+						data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+						data-target="#image-gallery">
+						<img class="img-thumbnail w3-animate-zoom"
+						src="https://s3.caradvice.com.au/wp-content/uploads/2017/06/2018_volkswagen_polo_27.jpg"
+						alt="Another alt text">
+					</a>
+					<p id="car_make5" class="font-weight-bold"> </p>	
+					<p id="car_model5" class="font-weight-bold"> </p>	
+
+					<p><a class="thumbnail btn btn-info" href="slide2.html" 
+						data-image="https://image.shutterstock.com/image-photo/image-front-sports-car-scene-260nw-566330083.jpg"
+						data-target="#image-gallery" class="btn btn-info" onclick="carfunction('car_model5')">Add to Cart</a></p>
+					</div>
+					<div id="VOLKSWAGEN" style="display:''" class="col-lg-3 col-md-4 col-xs-6 thumb w3-content w3-section VOLKSWAGEN Polo">
+						<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Honda city"
+						data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+						data-target="#image-gallery">
+						<img class="img-thumbnail w3-animate-zoom"
+						src="https://performancedrive.com.au/wp-content/uploads/2015/07/2015-Volkswagen-Polo-GTI-silver.jpg"
+						alt="Another alt text">
+					</a>
+					<p id="car_make6" class="font-weight-bold"> </p>	
+					<p id="car_model6" class="font-weight-bold"> </p>	
+
+					<p><a class="thumbnail btn btn-info" href="slide2.html" 
+						data-image="https://image.shutterstock.com/image-photo/image-front-sports-car-scene-260nw-566330083.jpg"
+						data-target="#image-gallery" class="btn btn-info" onclick="carfunction('car_model6')">Add to Cart</a></p>
+					</div>
+					<div id="TOYOTA" style="display:''" class="col-lg-3 col-md-4 col-xs-6 thumb w3-content w3-section TOYOTA Supra">
+						<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Honda city"
+						data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+						data-target="#image-gallery">
+						<img class="img-thumbnail w3-animate-zoom"
+						src="https://img.gta5-mods.com/q95/images/1998-toyota-supra-jza80-trd-varis-ridox-rhd/b83787-20180524235649_1.jpg"
+						alt="Another alt text">
+					</a>
+					<p id="car_make7" class="font-weight-bold"> </p>	
+					<p id="car_model7" class="font-weight-bold"> </p>	
+
+					<p><a class="thumbnail btn btn-info" href="slide2.html" 
+						data-image="https://image.shutterstock.com/image-photo/image-front-sports-car-scene-260nw-566330083.jpg"
+						data-target="#image-gallery" class="btn btn-info" onclick="carfunction('car_model7')">Add to Cart</a></p>
+					</div>
+					<div id="TOYOTA" style="display:''" class="col-lg-3 col-md-4 col-xs-6 thumb w3-content w3-section TOYOTA Corolla">
+						<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Honda city"
+						data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+						data-target="#image-gallery">
+						<img class="img-thumbnail w3-animate-zoom"
+						src="https://performancedrive.com.au/wp-content/uploads/2018/03/2019-Toyota-Corolla-two-tone-1280x886.jpg"
+						alt="Another alt text">
+					</a>
+
+					<p id="car_make8" class="font-weight-bold"> </p>	
+					<p id="car_model8" class="font-weight-bold"> </p>	
+
+					<p><a class="thumbnail btn btn-info" href="slide2.html" 
+						data-image="https://image.shutterstock.com/image-photo/image-front-sports-car-scene-260nw-566330083.jpg"
+						data-target="#image-gallery" class="btn btn-info" onclick="carfunction('car_model8')">Add to Cart</a></p>
+					</div>
+					<div id="HYUNDAI" style="display:''" class="col-lg-3 col-md-4 col-xs-6 thumb w3-content w3-section HYUNDAI Accent">
+						<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Honda city"
+						data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+						data-target="#image-gallery">
+						<img class="img-thumbnail w3-animate-zoom"
+						src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/2014_Hyundai_Accent_%28RB2_MY14%29_Active_sedan_%282015-08-07%29_01.jpg/1200px-2014_Hyundai_Accent_%28RB2_MY14%29_Active_sedan_%282015-08-07%29_01.jpg	"
+						alt="Another alt text">
+					</a>
+					<p id="car_make9" class="font-weight-bold"> </p>	
+					<p id="car_model9" class="font-weight-bold"> </p>	
+
+					<p><a class="thumbnail btn btn-info" href="slide2.html" 
+						data-image="https://image.shutterstock.com/image-photo/image-front-sports-car-scene-260nw-566330083.jpg"
+						data-target="#image-gallery" class="btn btn-info" onclick="carfunction('car_model9')">Add to Cart</a></p>
+					</div>
+					<div id="HYUNDAI" style="display:''" class="col-lg-3 col-md-4 col-xs-6 thumb w3-content w3-section HYUNDAI Elantra">
+						<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Honda city"
+						data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+						data-target="#image-gallery">
+						<img class="img-thumbnail w3-animate-zoom"
+						src="http://www.blogcdn.com/www.autoblog.com/media/2012/07/02-2013-hyundai-elantra-coupe-fd.jpg"
+						alt="Another alt text">
+					</a>
+					<p id="car_make10" class="font-weight-bold"> </p>	
+					<p id="car_model10" class="font-weight-bold"> </p>	
+
+					<p><a class="thumbnail btn btn-info" href="slide2.html" 
+						data-image="https://image.shutterstock.com/image-photo/image-front-sports-car-scene-260nw-566330083.jpg"
+						data-target="#image-gallery" class="btn btn-info" onclick="carfunction('car_model10')">Add to Cart</a></p>
+					</div>
+
+					<div id="Mercedes-Benz" style="display:''" class="col-lg-3 col-md-4 col-xs-6 thumb w3-content w3-section Mercedes-Benz CLS_Class">
+						<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Honda city"
+						data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+						data-target="#image-gallery">
+						<img class="img-thumbnail w3-animate-zoom"
+						src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Audi_A5_Coup%C3%A9_S-Line_Phantomschwarz.JPG"
+						alt="Another alt text">
+					</a>
+					<p id="car_make11" class="font-weight-bold"> </p>	
+					<p id="car_model11" class="font-weight-bold"> </p>	
+
+					<p><a class="thumbnail btn btn-info" href="slide2.html" 
+						data-image="https://image.shutterstock.com/image-photo/image-front-sports-car-scene-260nw-566330083.jpg"
+						data-target="#image-gallery" class="btn btn-info" onclick="carfunction('car_model11')">Add to Cart</a></p>
+					</div>
+					<div id="Mercedes-Benz" style="display:''" class="col-lg-3 col-md-4 col-xs-6 thumb w3-content w3-section Mercedes-Benz Class_A">
+						<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Honda city"
+						data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+						data-target="#image-gallery">
+						<img class="img-thumbnail w3-animate-zoom"
+						src="https://apollo-ireland.akamaized.net/v1/files/eyJmbiI6InRpMXBhOWQxb3E3eTItU1REVlRMUFQiLCJ3IjpbeyJmbiI6IjZtZ2p3bHA3a2dkYjItU1REVlRMUFQiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.yp8I5Gm-36Ciyt4HGx8iHdY79JsKJxlwlBolWu_--d0/image;s=1080x720;cars_;/121929887_;slot=1;filename=eyJmbiI6InRpMXBhOWQxb3E3eTItU1REVlRMUFQiLCJ3IjpbeyJmbiI6IjZtZ2p3bHA3a2dkYjItU1REVlRMUFQiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.yp8I5Gm-36Ciyt4HGx8iHdY79JsKJxlwlBolWu+--d0_rev001.jpg"
+						alt="Another alt text">
+					</a>
+					<p id="car_make12" class="font-weight-bold"> </p>	
+					<p id="car_model12" class="font-weight-bold"> </p>	
+
+					<p><a class="thumbnail btn btn-info" href="slide2.html" 
+						data-image="https://image.shutterstock.com/image-photo/image-front-sports-car-scene-260nw-566330083.jpg"
+						data-target="#image-gallery" class="btn btn-info"  onclick="carfunction('car_model12')">Add to Cart</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--accordian starts here-->
+	<div id="pmd-accordion-icon">
+		<div class="card active">
+			<div class="card-header text-center" id="pmd-inbox-headingOne">
+				<h5 class="mb-0">
+					<button class="btn btn-link font-weight-bold font-italic text-center" data-toggle="collapse" data-target="#pmd-accordion-icon-collapseOne" aria-expanded="true" aria-controls="pmd-accordion-icon-collapseOne" style="color:#ce2127;">
+						
+					</button>
+				</h5>
+			</div>
+			<div id="pmd-accordion-icon-collapseOne" class="collapse show" aria-labelledby="pmd-accordion-icon-headingOne" data-parent="#pmd-accordion-icon">
+				<div class="card-body text-center">
+					Runway is India’s one of the first on-vehicle advertisement company offering Cab Branding, Auto Advertising and other media solutions to spread the word about your brand to every possible place. We pride to help businesses reach their marketing goals through the path we create.
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header text-center" id="pmd-accordion-icon-headingTwo">
+				<h5 class="mb-0">
+					<button class="btn btn-link btn btn-link font-weight-bold font-italic text-center" data-toggle="collapse" data-target="#pmd-accordion-icon-collapseTwo" aria-expanded="false" aria-controls="pmd-accordion-icon-collapseTwo"  style="color:#ce2127;">
+						
+					</button>
+				</h5>
+			</div>
+			<div id="pmd-accordion-icon-collapseTwo" class="collapse" aria-labelledby="pmd-accordion-icon-headingTwo" data-parent="#pmd-accordion-icon">
+				<div class="card-body text-center">
+				
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header text-center" id="pmd-accordion-icon-headingTwo">
+				<h5 class="mb-0">
+					<button class="btn btn-link btn btn-link font-weight-bold font-italic text-center" data-toggle="collapse" data-target="#pmd-accordion-icon-collapseTwo" aria-expanded="false" aria-controls="pmd-accordion-icon-collapseTwo"  style="color:#ce2127;">
+					</button>
+				</h5>
+			</div>
+			<div id="pmd-accordion-icon-collapseTwo" class="collapse" aria-labelledby="pmd-accordion-icon-headingTwo" data-parent="#pmd-accordion-icon">
+				<div class="card-body">
+				</div>
+			</div>
+		</div>
+	</div> <!--Accordion end -->
+	<!--footer-->
+	<footer class="mt-4 bg-dark">
+		<div class="container">
+			<div class="row text-center align-items-center">
+				<div class="col-12 col-sm-6 col-md-4 text-sm-left" style="color:white">
+					<h3>SuperMarket</h3>
+					<p>70 Bowman St.<br>South Circular Rd, Dublin 8</p>
+					<p>Ireland</p>
+					<p>+353 896523147</p>
+				</div>
+				<div class="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0 text-center text-sm-right text-md-center" style="height:80px;">
+				</div>
+				<div class="col-12 col-md-4 mt-4 mt-md-0 text-center text-md-right">
+					<a href="https://www.facebook.com" class="mx-2"><img src="https://img.icons8.com/ios-glyphs/50/ffffff/facebook-new.png"></a>
+					<a href="https://www.linkedin.com" class="mx-2"><img src="https://img.icons8.com/ios-glyphs/50/ffffff/linkedin-2.png"></a>
+					<a href="https://www.instagram.com" class="mx-2"><img src="https://img.icons8.com/ios-glyphs/50/ffffff/instagram-new.png"></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
