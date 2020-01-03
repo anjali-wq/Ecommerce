@@ -24,7 +24,7 @@ def register():
         elif not password:
             error = 'Password is required.'
         elif not email:
-            error = 'EmailID is required.'
+            error = 'Email is required.'
         elif db.execute(
                 'SELECT user_id FROM user WHERE username = ?', (username,)
         ).fetchone() is not None:
@@ -63,7 +63,7 @@ def login():
 
         if error is None:
             session.clear()
-            session['user_id'] = user['id']
+            session['user_id'] = user['user_id']
             return redirect(url_for('index'))
 
         flash(error)
