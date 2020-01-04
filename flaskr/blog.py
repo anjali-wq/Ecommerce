@@ -49,7 +49,7 @@ def create():
 def get_post(id, check_author=True):
     post = get_db().execute(
         'SELECT p.id, title, body, created, author_id, username'
-        ' FROM post p JOIN user u ON p.author_id = u.id'
+        ' FROM post p JOIN user u ON p.author_id = u.user_id'
         ' WHERE p.id = ?',
         (id,)
     ).fetchone()
@@ -57,7 +57,7 @@ def get_post(id, check_author=True):
     if post is None:
         abort(404, "Post id {0} doesn't exist.".format(id))
 
-    if check_author and post['author_id'] != g.user['id']:
+    if check_author and post['author_id'] != g.user['user_id']:
         abort(403)
 
     return post
