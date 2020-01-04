@@ -6,9 +6,9 @@ from werkzeug.exceptions import abort
 from flaskr.auth import login_required
 from flaskr.db import get_db
 
-bp = Blueprint('kart', __name__)
+bp = Blueprint('kart', __name__,url_prefix='/kart')
 
-@bp.route('/kart/index')
+@bp.route('/index')
 def index():
     db = get_db()
 
@@ -18,7 +18,7 @@ def index():
 
     return render_template('kart/index.html', kart_items=kart_items)
 
-@bp.route('/kart/create', methods=('GET', 'POST'))
+@bp.route('/create', methods=('GET', 'POST'))
 @login_required
 def create():
     if request.method == 'POST':
