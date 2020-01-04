@@ -9,6 +9,7 @@ from flaskr.db import get_db
 bp = Blueprint('kart', __name__,url_prefix='/kart')
 
 @bp.route('/index')
+
 def index():
     db = get_db()
 
