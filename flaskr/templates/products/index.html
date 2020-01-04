@@ -4,11 +4,11 @@
     {% for product in products %}
         <form method="post">
             <input hidden type='text' name="product_id" value={{ product['id'] }} />
-            <h1>{{ product['name'] }}</h1>
-            <h1>&euro;{{ product['price'] }}</h1>
-            <h1>{{ product['description'] }}</h1>
-            <img src=../../{{ product['image'] }} width='20%' />
-            <h1>stock:{{ product['stock'] }}</h1>
+            <h1>Brand:{{ product['name'] }}</h1>
+            <img class="img-thumbnail w3-animate-zoom" src=../../{{ product['image'] }} width='20%' />
+            <h2>{{ product['description'] }}</h2>
+            <h3>Price:&euro;{{ product['price'] }}</h3>            
+            <h4>Quantity:{{ product['stock'] }}</h4>
             <input type="submit" name="submit_button" value="add to cart" />
         </form>
     {% endfor %}
