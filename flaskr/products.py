@@ -9,6 +9,7 @@ from flaskr.db import get_db
 bp = Blueprint('products', __name__)
 
 @bp.route('/', methods=['GET', 'POST'])
+
 def index():
     if request.method != 'POST':
         db = get_db()
