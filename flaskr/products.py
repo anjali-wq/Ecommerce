@@ -20,7 +20,7 @@ def index():
     else:
         # print(request.form['product_id'])
         try:
-            logged_in_user_id = g.user['id']
+            logged_in_user_id = g.user['user_id']
         except:
             logged_in_user_id = 1
         db = get_db()

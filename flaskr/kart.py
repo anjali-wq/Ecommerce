@@ -16,20 +16,12 @@ def index():
     kart_items = db.execute(
         'SELECT kart.id,Products.name, Products.price, Products.description, Products.image, Products.id FROM products JOIN kart ON Products.id = Kart.product_id'
 
+
     ).fetchall()
 
     return render_template('kart/index.html', kart_items=kart_items)
 
-def get_kart(id, check_author=True):
-    kart = get_db().execute(
-        'SELECT p.id,user_id,product_id'
-        ' FROM kart p '
-        ' WHERE p.id = ?',
-        (id,)
-    ).fetchone()
 
-    
-    return kart
 
 @bp.route('/create', methods=('GET', 'POST'))
 @login_required
@@ -47,8 +39,7 @@ def create():
                 ' VALUES (?, ?)',
                 (g.user['user_id'], product_id)
             )
-            print(g.user['id'])
-            print(product_id)
+            
             db.commit()
             return redirect(url_for('kart.index'))
 
@@ -59,7 +50,7 @@ def create():
 @bp.route('/<int:id>/delete', methods=('POST',))
 @login_required
 def delete(id):
-    get_kart(id)
+    
     db = get_db()
     db.execute('DELETE FROM kart WHERE id = ?', (id,))
     db.commit()
