@@ -17,7 +17,9 @@
               <h1>&euro;{{ kart_item['price'] }}</h1>
               <h1>{{ kart_item['description'] }}</h1>
               <img src="../../{{ kart_item['image'] }}" width="20%" /><br></br>
-              <input type="submit" name="submit_button" value="Remove" />
+              <form action="{{ url_for('kart.delete', id=kart_item['id']) }}" method="post">
+              <input type="submit" name="submit_button" value="Remove" /> 
+            </form>
           </div>
       </header>
 

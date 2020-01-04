@@ -9,15 +9,27 @@ from flaskr.db import get_db
 bp = Blueprint('kart', __name__,url_prefix='/kart')
 
 @bp.route('/index')
-
+@login_required
 def index():
     db = get_db()
 
     kart_items = db.execute(
-        'SELECT Products.name, Products.price, Products.description, Products.image, Products.id FROM products JOIN kart ON Products.id = Kart.product_id'
+        'SELECT kart.id,Products.name, Products.price, Products.description, Products.image, Products.id FROM products JOIN kart ON Products.id = Kart.product_id'
+
     ).fetchall()
 
     return render_template('kart/index.html', kart_items=kart_items)
+
+def get_kart(id, check_author=True):
+    kart = get_db().execute(
+        'SELECT p.id,user_id,product_id'
+        ' FROM kart p '
+        ' WHERE p.id = ?',
+        (id,)
+    ).fetchone()
+
+    
+    return kart
 
 @bp.route('/create', methods=('GET', 'POST'))
 @login_required
@@ -33,7 +45,7 @@ def create():
             db.execute(
                 'INSERT INTO kart (user_id, product_id)'
                 ' VALUES (?, ?)',
-                (g.user['id'], product_id)
+                (g.user['user_id'], product_id)
             )
             print(g.user['id'])
             print(product_id)
@@ -41,3 +53,14 @@ def create():
             return redirect(url_for('kart.index'))
 
     return render_template('kart/create.html')
+
+
+
+@bp.route('/<int:id>/delete', methods=('POST',))
+@login_required
+def delete(id):
+    get_kart(id)
+    db = get_db()
+    db.execute('DELETE FROM kart WHERE id = ?', (id,))
+    db.commit()
+    return redirect(url_for('kart.index'))
