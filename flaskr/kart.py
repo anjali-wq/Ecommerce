@@ -14,7 +14,8 @@ def index():
     db = get_db()
 
     kart_items = db.execute(
-        'SELECT kart.id,Products.name, Products.price, Products.description, Products.image, Products.id FROM products JOIN kart ON Products.id = Kart.product_id'
+        'SELECT kart.user_id,kart.id,Products.name, Products.price, Products.description, Products.image, Products.id FROM products JOIN kart ON Products.id = Kart.product_id'
+        
 
 
     ).fetchall()
