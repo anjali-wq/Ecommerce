@@ -36,3 +36,6 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.jdt.core 4 0 2020-01-05 14:46:06.305
 !MESSAGE Invalid ZIP archive: driver/chromedriver.exe [in Ecommerce]
+
+!ENTRY org.eclipse.jdt.core 4 0 2020-01-05 14:54:16.216
+!MESSAGE Invalid ZIP archive: driver/chromedriver.exe [in Ecommerce]
