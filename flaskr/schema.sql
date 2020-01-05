@@ -1,10 +1,10 @@
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS post;
 DROP TABLE IF EXISTS kart;
 DROP TABLE IF EXISTS products;
 
 CREATE TABLE user(
-user_id INTEGER PRIMARY KEY AUTOINCREMENT,
+		user_id INTEGER PRIMARY KEY AUTOINCREMENT,
 		password TEXT,
 		email TEXT UNIQUE NOT NULL,
 		username TEXT UNIQUE NOT NULL
@@ -36,11 +36,14 @@ stock INTEGER
 );
 
 INSERT INTO products (name, price, description, image, stock)
-VALUES ('volkswagon', 1000, 'car description', 'static/images/car.jpeg', 1);
+VALUES ('Fossil', 125, 'Analog Watch', 'static/images/Watch.jpg', 15);
 
 INSERT INTO products (name, price, description, image, stock)
-VALUES ('BMW', 2000, 'car description bmw', 'static/images/car.jpeg', 2);
+VALUES ('Reebok', 54, 'Formal Wear', 'static/images/shoe.jpeg', 15);
 
 INSERT INTO products (name, price, description, image, stock)
-VALUES ('Volvo', 2000, 'car description volvo', 'static/images/car2.jpg', 44);
+VALUES ('Levis', 75, 'Casual T-Shirt', 'static/images/t-shirt.jpg', 7);
+
+INSERT INTO products (name, price, description, image, stock)
+VALUES ('H & M', 125, 'Formal Pant', 'static/images/pant.jpg', 13);
 
