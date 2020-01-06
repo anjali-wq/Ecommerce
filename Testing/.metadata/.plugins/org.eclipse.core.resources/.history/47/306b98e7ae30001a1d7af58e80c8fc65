@@ -1,0 +1,51 @@
+package Junit;
+import java.util.Date;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class Review {
+	static WebDriver driver;
+
+	@BeforeClass
+	public static void beforeclass() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\ARUNANAND\\eclipse-workspace\\project1\\driver\\chromedriver.exe");
+		driver=new ChromeDriver();
+		driver.get("http://127.0.0.1:5000");
+		Assert.assertTrue(driver.getCurrentUrl().contains("Products"));
+		}
+
+	@AfterClass
+	public static void afterclass() {
+		driver.quit();
+	}
+
+	@Before
+	public void before() {
+		Date d=new Date();
+		System.out.println(d);
+	}
+
+	@After
+	public void after() {
+		Date d=new Date();
+		System.out.println(d);
+	}
+
+	@Test
+	public void test() throws InterruptedException {
+		Thread.sleep(2000);
+		driver.findElement(By.linkText("/blog/index")).click();
+		
+		
+		
+		
+	}
+}
