@@ -38,6 +38,7 @@ public class Register {
 	public void after() {
 		Date d=new Date();
 		System.out.println(d);
+		driver.manage().window().maximize();
 	}
 	
 	@Test
@@ -75,6 +76,6 @@ public class Register {
 		Assert.assertEquals("admin",txtPass.getAttribute("value"));
 			
 		driver.findElement(By.xpath("//input[@value='Register']")).click();		
-		
+		Thread.sleep(4000);
 	}
 }
