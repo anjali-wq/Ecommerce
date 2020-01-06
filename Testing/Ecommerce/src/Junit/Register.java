@@ -39,7 +39,7 @@ public class Register {
 		Date d=new Date();
 		System.out.println(d);
 	}
-
+	
 	@Test
 	public void test() throws InterruptedException {
 		WebElement txtUserName = driver.findElement(By.id("username"));
@@ -55,9 +55,26 @@ public class Register {
 		txtPass.sendKeys("admin");
 		Assert.assertEquals("admin",txtPass.getAttribute("value"));
 			
-		driver.findElement(By.xpath("//input[@value='Register']")).click();
+		driver.findElement(By.xpath("//input[@value='Register']")).click();		
 		
+	}
+
+	@Test
+	public void test1() throws InterruptedException {
+		WebElement txtUserName = driver.findElement(By.id("username"));
+		Thread.sleep(2000);
+		txtUserName.sendKeys("test1");		
+		Assert.assertEquals("test1",txtUserName.getAttribute("value"));
 		
+		WebElement txtEmail = driver.findElement(By.id("email"));
+		txtEmail.sendKeys("test1@gmail.com");		
+		Assert.assertEquals("test1@gmail.com",txtEmail.getAttribute("value"));
+		Thread.sleep(2000);
+		WebElement txtPass = driver.findElement(By.id("password"));
+		txtPass.sendKeys("admin");
+		Assert.assertEquals("admin",txtPass.getAttribute("value"));
+			
+		driver.findElement(By.xpath("//input[@value='Register']")).click();		
 		
 	}
 }

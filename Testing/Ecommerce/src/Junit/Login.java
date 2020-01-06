@@ -39,9 +39,54 @@ public class Login {
 		Date d=new Date();
 		System.out.println(d);
 	}
-
+	
 	@Test
 	public void test() throws InterruptedException {
+		WebElement txtUserName = driver.findElement(By.id("username"));
+		Thread.sleep(2000);
+		txtUserName.sendKeys("");
+		
+		Assert.assertEquals("",txtUserName.getAttribute("value"));
+		WebElement txtPass = driver.findElement(By.id("password"));
+		txtPass.sendKeys("");
+		Assert.assertEquals("",txtPass.getAttribute("value"));
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@value='Log In']")).click();
+		Thread.sleep(7000);
+	}
+	
+	@Test
+	public void test1() throws InterruptedException {
+		WebElement txtUserName = driver.findElement(By.id("username"));
+		Thread.sleep(2000);
+		txtUserName.sendKeys("admin");
+		
+		Assert.assertEquals("admin",txtUserName.getAttribute("value"));
+		WebElement txtPass = driver.findElement(By.id("password"));
+		txtPass.sendKeys("admin");
+		Assert.assertEquals("admin",txtPass.getAttribute("value"));
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@value='Log In']")).click();
+		Thread.sleep(7000);
+	}
+	
+	@Test
+	public void test2() throws InterruptedException {
+		WebElement txtUserName = driver.findElement(By.id("username"));
+		Thread.sleep(2000);
+		txtUserName.sendKeys("arun");
+		
+		Assert.assertEquals("arun",txtUserName.getAttribute("value"));
+		WebElement txtPass = driver.findElement(By.id("password"));
+		txtPass.sendKeys("arun");
+		Assert.assertEquals("arun",txtPass.getAttribute("value"));
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@value='Log In']")).click();
+		Thread.sleep(7000);
+	}
+
+	@Test
+	public void test3() throws InterruptedException {
 		WebElement txtUserName = driver.findElement(By.id("username"));
 		Thread.sleep(2000);
 		txtUserName.sendKeys("arun");
