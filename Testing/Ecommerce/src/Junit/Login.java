@@ -22,14 +22,16 @@ public class Login {
 		}
 
 	@AfterClass
-	public static void afterclass() {
-		
+	public static void afterclass() throws InterruptedException {
+		Thread.sleep(3000);
+		driver.quit();
 	}
 
 	@Before
 	public void before() {
 		Date d=new Date();
 		System.out.println(d);
+		driver.manage().window().maximize();
 	}
 
 	@After

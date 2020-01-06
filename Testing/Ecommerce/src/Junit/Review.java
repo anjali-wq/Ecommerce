@@ -1,12 +1,12 @@
 package Junit;
 import java.util.Date;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,18 +19,20 @@ public class Review {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\ARUNANAND\\eclipse-workspace\\project1\\driver\\chromedriver.exe");
 		driver=new ChromeDriver();
 		driver.get("http://127.0.0.1:5000");
-		
+		driver.manage().window().maximize();
 		}
 
 	@AfterClass
-	public static void afterclass() {
-	
+	public static void afterclass() throws InterruptedException {
+		Thread.sleep(3000);
+		driver.quit();
 	}
 
 	@Before
 	public void before() {
 		Date d=new Date();
 		System.out.println(d);
+		driver.manage().window().maximize();
 	}
 
 	@After
@@ -70,6 +72,9 @@ public class Review {
 		driver.findElement(By.linkText("Edit")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//input[@value='Delete']")).click();
+		Thread.sleep(3000);
+		Alert a1=driver.switchTo().alert();
+		a1.accept();
 		Thread.sleep(3000);
 	}
 }

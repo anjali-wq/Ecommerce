@@ -1,6 +1,5 @@
 package Junit;
 import java.util.Date;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -11,15 +10,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-public class Register {
+public class Cart {
 	static WebDriver driver;
 
 	@BeforeClass
 	public static void beforeclass() {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\ARUNANAND\\eclipse-workspace\\project1\\driver\\chromedriver.exe");
 		driver=new ChromeDriver();
-		driver.get("http://127.0.0.1:5000/auth/register");
-		Assert.assertTrue(driver.getCurrentUrl().contains("register"));
+		driver.get("http://127.0.0.1:5000/auth/login");
+		driver.manage().window().maximize();
 		}
 
 	@AfterClass
@@ -32,6 +31,7 @@ public class Register {
 	public void before() {
 		Date d=new Date();
 		System.out.println(d);
+		driver.manage().window().maximize();
 	}
 
 	@After
@@ -42,22 +42,23 @@ public class Register {
 
 	@Test
 	public void test() throws InterruptedException {
+		
 		WebElement txtUserName = driver.findElement(By.id("username"));
 		Thread.sleep(2000);
-		txtUserName.sendKeys("anand");		
-		Assert.assertEquals("anand",txtUserName.getAttribute("value"));
-		
-		WebElement txtEmail = driver.findElement(By.id("email"));
-		txtEmail.sendKeys("anand@gmail.com");		
-		Assert.assertEquals("anand@gmail.com",txtEmail.getAttribute("value"));
-		Thread.sleep(2000);
+		txtUserName.sendKeys("arun");		
+		Assert.assertEquals("arun",txtUserName.getAttribute("value"));
 		WebElement txtPass = driver.findElement(By.id("password"));
 		txtPass.sendKeys("admin");
 		Assert.assertEquals("admin",txtPass.getAttribute("value"));
-			
-		driver.findElement(By.xpath("//input[@value='Register']")).click();
-		
-		
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@value='Log In']")).click();
+		Thread.sleep(7000);
+		driver.findElement(By.xpath("//input[@value='add to cart']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.linkText("Cart")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@value='Remove']")).click();
+		Thread.sleep(7000);
 		
 	}
 }
