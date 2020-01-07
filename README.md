@@ -7,3 +7,5 @@ Dependencies:commons-io-2.4,hamcrest-core-1.3,jcommander-1.27,junit-4.12,seleniu
 Webdriver:chromedriver
 Version:79.0.3945.88 
 IDE:Eclipse
+
+Added Runner Class in the package to run all classes same time
