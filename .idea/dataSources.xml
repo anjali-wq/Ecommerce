@@ -7,5 +7,11 @@
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:C:\Users\anjalip\Desktop\pybox\ecommerce\instance\flaskr.sqlite</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="flaskr [2]" uuid="f45dbbf9-d7d8-44b6-959e-9dc6e333ec28">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\ARUNANAND\PycharmProjects\git-app\Ecommerce\instance\flaskr.sqlite</jdbc-url>
+    </data-source>
   </component>
 </project>
